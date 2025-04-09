@@ -7,7 +7,7 @@ import {Payment} from "../models/payment.model.js"
 
 
 const getUserDetails = asyncHandler(async(req , res) => {
-const userId = req.params
+const {userId} = req.params
 
 if(!userId){
     throw new ApiError(400 , "Please provide UserId")
@@ -24,7 +24,7 @@ return res.status(200).json( new ApiResponse(200 , user , "user fetch successful
 
 
 const getUserPaymentHistory = asyncHandler( async(req , res) => {
-    const userId = req.params
+    const{ userId }= req.params
 
 if(!userId){
     throw new ApiError(400 , "Please provide UserId")
